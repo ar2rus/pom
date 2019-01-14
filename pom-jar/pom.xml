@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.gargon.pom</groupId>
+    <artifactId>pom-jar</artifactId>
+    <packaging>pom</packaging>
+    
+    <parent>
+        <groupId>com.gargon.pom</groupId>
+        <artifactId>pom</artifactId>
+        <version>1.0</version>
+    </parent>
+  
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.1.1</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <classpathPrefix>lib/</classpathPrefix>
+                            <useUniqueVersions>false</useUniqueVersions>
+                            <mainClass>${mainClass}</mainClass>
+                        </manifest>
+                        
+                        <manifestEntries>
+                            <Build-Jdk>${build.jdk}</Build-Jdk>
+                            <Build-Timestamp>${current.timestamp}</Build-Timestamp>
+                            <Build-Revision>${buildNumber}</Build-Revision>
+                            <!--<Build-Branch>${scmBranch}</Build-Branch>-->
+                            <Implementation-Title>${implementation.title}</Implementation-Title>
+                            <Implementation-Version>${implementation.version}</Implementation-Version>
+                            <Implementation-Vendor>${implementation.vendor}</Implementation-Vendor>
+                            <Specification-Version>${specification.version}</Specification-Version>
+                            <Specification-Vendor>${specification.vendor}</Specification-Vendor>
+                        </manifestEntries>
+                        
+                        <addMavenDescriptor>false</addMavenDescriptor>
+                    </archive>
+                </configuration>
+            </plugin>
+            
+        </plugins>
+    </build>
+</project>
