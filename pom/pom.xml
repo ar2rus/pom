@@ -13,8 +13,8 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        
-        <vendor.name>Arthur Nikiforov</vendor.name>
+
+        <vendor.name>Arthur Nikiforov!</vendor.name>
         
         <build.jdk>${java.version} (${java.vendor} ${java.vm.version})</build.jdk>
         <build.timestamp>${current.timestamp}</build.timestamp>
